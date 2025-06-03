@@ -1,0 +1,61 @@
+個人網站範例:https://vicchoutw.com/contact.html
+
+
+動態背景-tsParticles-DynamicBackgrounds.jsx
+範例:https://github.com/tsparticles/react
+
+超級功能表 導行欄
+抽屜
+頁腳
+旋轉木馬
+畫廊
+導覽列 Breadcrumb
+
+react在githut page部署  https://www.spatialgeolab.com/github-react-depoly/
+1.安裝gh-pages:bun add -d gh-pages
+2.package.json增加:
+    "name": "web",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+//    "homepage": "https://StarHsin.github.io/Personal-Web",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+//        "predeploy": "bun run build",  
+//        "deploy": "gh-pages -d dist"  
+  },
+3.vite.congig.js增加:
+    export default defineConfig({
+        plugins: [react()],
+//        base: '/Personal-Web/', 
+    })
+4.建構&部署:
+    bun run predeploy    // 執行構建
+    bun run deploy       // 執行部署到 GitHub Pages
+    此時github上會顯示gh-pags分支
+5.點擊專案裡的setting-pages:
+    選分支gh-pags，root後儲存
+    注意!! 專案須為公共，可在general裡的最下面設定
+6.進入生成的網址就完成了
+
+
+2025/01/19 動態背景
+2025/01/20 頂層欄側邊欄
+2025/01/22 github pages部署
+
+
+git branch -D gh-pages
+git push origin --delete gh-pages
+bun run deploy
+
+
+git checkout --orphan gh-pages  # 創建新的 gh-pages 分支
+git reset --hard  # 清除分支上的所有文件
+git commit --allow-empty -m "Initialize gh-pages branch"
+git push origin gh-pages  # 推送到 GitHub 遠端
+git checkout main  # 切回 main 分支
+
+
